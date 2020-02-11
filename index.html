@@ -11,11 +11,22 @@
 <body>
     <canvas id="mycanvas"></canvas>
 </body>
+<script id="vertex-shader" type="text/glsl">
+  attribute vec4 position;
+  
+  void main(){
+    gl_Position = position;
+  }
+</script>
 <script id="fragment-shader" type="text/glsl">
   #ifdef GL_ES
   precision highp float;
   #endif
-  
+
+  void main() {
+    gl_FragColor = vec4(0.058, 0.298, 0.505, 1);
+  }
+ 
 </script>
 <script src="gradientWebGL.js"></script>
 </html>
